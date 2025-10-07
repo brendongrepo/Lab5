@@ -1,4 +1,4 @@
 Enter the name of the input file (ie input.txt): input.txt
-Enter the name of the output file to create (ie output.txt): output.txt
+Enter the name of the output file to create (ie output.txt): output(v2).txt
 Grade processing is completed
-You can retrieve the output file at: output.txt
+You can retrieve the output file at: output(v2).txt

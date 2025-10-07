@@ -11,8 +11,8 @@ import java.io.*;
  * 6) Displays confirmation messages to the console once processing is complete.
  * 
  * @author Brendon Grepo, bgrepo@student.sdccd.edu
- * @version v1.0
- * @since 10/5/2025
+ * @version v1.1
+ * @since 10/6/2025
  */
 public class Grades {
     public static void main (String[] args) throws IOException{ 
@@ -74,26 +74,13 @@ public class Grades {
             As=Bs=Cs=Ds=Fs=count=0;
             avg=0.0;
             total=0;
+
             String line = in.nextLine();
-            if (line.trim().isEmpty()){
-                out.println("Set " + set + " of grades calculated");
-                out.println("No grades to average");
-                out.println();
-                set++;
-                continue;
-            }
             Scanner lineScan = new Scanner(line);
-            if (lineScan.hasNextInt()){
-                number = lineScan.nextInt();
-                min = max = number;
-            } else {
-                out.println("Set " + set + " of grades calculated");
-                out.println("No grades to average");
-                out.println();
-                set++;
-                lineScan.close();
-                continue;
-            }
+
+            number = lineScan.nextInt();
+            min = max = number;
+
             while (number != -1){
                 if(number<min)
                     min = number;
@@ -112,10 +99,7 @@ public class Grades {
                 else
                     Fs++;
 
-                if (lineScan.hasNextInt())
-                    number = lineScan.nextInt();
-                else
-                    number = -1;
+                number = lineScan.nextInt();
             }//end while
             out.println("Set " + set + " of grades calculated");
             set++;
